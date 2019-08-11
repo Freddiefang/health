@@ -17,8 +17,7 @@ public interface UserService {
      * 获取用户需要显示的菜单集合
      * @return
      * @param username
-     * @param password
      */
-    Set<Menu> getMenuList(String username, String password);
+    Set<Menu> getMenuList(String username);
 
 }

@@ -51,13 +51,12 @@ public class UserServiceImpl implements UserService {
      * 获取用户需要显示的菜单集合
      * @return
      * @param username
-     * @param password
      */
     @Override
-    public Set<Menu> getMenuList(String username, String password) {
+    public Set<Menu> getMenuList(String username) {
         LinkedHashSet<Menu> menus = new LinkedHashSet<>();
         //通过用户名和用户密码查询用户ID
-        User user = userDao.findUserByUsernameAndPassword(username,password);
+        User user = userDao.findUserByUsername(username);
         //通过用户ID查询角色ID
         Integer userId = user.getId();
         Set<Role> roleSet = roleDao.findRoleByUserId(userId);
@@ -66,12 +65,37 @@ public class UserServiceImpl implements UserService {
                 Integer roleId = role.getId();
                 //通过角色ID查询，角色所具有的菜单选项
                 List<Integer> menuIdList = menuDao.findMenuIdByRoleId(roleId);
+                Menu menu = null;
+                List<Integer> parentIds = new ArrayList<>();
+                List<Integer> childIds = new ArrayList<>();
                 if (menuIdList != null && menuIdList.size() > 0){
                     for (Integer menuId : menuIdList) {
                         //查询菜单项
-                        Menu menu = menuDao.findMenuByMenuId(menuId);
-                        menus.add(menu);
+                        menu = menuDao.findMenuByMenuId(menuId);
+                        //查询child
+                        if(menu.getParentMenuId() == null){
+                            //说明这是父菜单,查询父菜单的ID
+                            parentIds.add(menuId);
+                        }
+                        if (menu.getIcon() == null){
+                            //说明这是child菜单
+                            childIds.add(menuId);
+                        }
                     }
+                }
+                for (Integer parentId : parentIds) {
+                    Menu parentMenu = menuDao.findMenuByMenuId(parentId);
+                    List<Menu> childMenuList = new ArrayList<>();
+                    for (Integer childId : childIds) {
+                        //查询孩子的父菜单
+                        Menu childMenu = menuDao.findMenuByMenuId(childId);
+                        if (childMenu.getParentMenuId() == parentId){
+                            //匹配成功
+                            childMenuList.add(childMenu);
+                        }
+                    }
+                    parentMenu.setChildren(childMenuList);
+                    menus.add(parentMenu);
                 }
             }
         }

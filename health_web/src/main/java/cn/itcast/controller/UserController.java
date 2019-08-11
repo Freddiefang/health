@@ -34,7 +34,7 @@ public class UserController {
             map.put("username",user.getUsername());
 
             //查询菜单集合
-            Set<Menu> menuList = userService.getMenuList(user.getUsername(),user.getPassword());
+            Set<Menu> menuList = userService.getMenuList(user.getUsername());
             map.put("menuList",menuList);
 
             return new Result(true, MessageConstant.GET_MENU_SUCCESS,map);
