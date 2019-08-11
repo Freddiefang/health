@@ -8,4 +8,9 @@
         SELECT * FROM t_user WHERE  username = #{username}
     </select>
 
+    <!--通过用户名和用户密码查询用户ID-->
+    <select id="findUserByUsernameAndPassword" resultType="cn.itcast.pojo.User" parameterType="string">
+        SELECT * FROM t_user u WHERE u.username = #{username} and u.password = #{password}
+    </select>
+
 </mapper>

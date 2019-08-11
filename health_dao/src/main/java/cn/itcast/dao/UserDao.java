@@ -1,6 +1,7 @@
 package cn.itcast.dao;
 
 import cn.itcast.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserDao {
 
@@ -11,4 +12,11 @@ public interface UserDao {
      */
     User findUserByUsername(String username);
 
+    /**
+     * 通过用户名和用户密码查询用户ID
+     * @param username
+     * @param password
+     * @return
+     */
+    User findUserByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
 }
