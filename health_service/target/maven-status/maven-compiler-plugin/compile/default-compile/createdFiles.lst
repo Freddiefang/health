@@ -1,0 +1,9 @@
+cn\itcast\service\impl\SetMealServiceImpl.class
+cn\itcast\service\impl\MemberServiceImpl.class
+cn\itcast\service\impl\MenuServiceImpl.class
+cn\itcast\service\impl\CheckGroupServiceImpl.class
+cn\itcast\service\impl\OrdersettingServiceImpl.class
+cn\itcast\service\impl\UserServiceImpl.class
+cn\itcast\service\impl\OrderServiceImpl.class
+cn\itcast\service\impl\CheckItemServiceImpl.class
+cn\itcast\service\impl\ReportServiceImpl.class

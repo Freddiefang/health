@@ -1,0 +1,11 @@
+cn\itcast\dao\CheckGroupDao.class
+cn\itcast\dao\MenuDao.class
+cn\itcast\dao\PermissionDao.class
+cn\itcast\dao\ReportDao.class
+cn\itcast\dao\CheckItemDao.class
+cn\itcast\dao\OrdersettingDao.class
+cn\itcast\dao\SetMealDao.class
+cn\itcast\dao\UserDao.class
+cn\itcast\dao\OrderDao.class
+cn\itcast\dao\RoleDao.class
+cn\itcast\dao\MemberDao.class
