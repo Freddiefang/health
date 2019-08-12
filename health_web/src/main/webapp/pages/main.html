@@ -56,8 +56,8 @@
                 <el-menu>
                     <el-submenu v-for="menu in menuList" :index="menu.path">
                         <template slot="title">
-                            <i class="fa" :class="menu.icon">{{menu.name}}</i>
-
+                            <i class="fa" :class="menu.icon"></i>
+                            {{menu.name}}
                         </template>
                         <template v-for="child in menu.children">
                             <el-menu-item :index="child.path">

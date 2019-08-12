@@ -2,7 +2,7 @@ package cn.itcast.dao;
 
 import cn.itcast.pojo.Menu;
 
-import java.util.List;
+import java.util.LinkedList;
 
 public interface MenuDao {
 
@@ -11,7 +11,7 @@ public interface MenuDao {
      * @param roleId
      * @return
      */
-    List<Integer> findMenuIdByRoleId(Integer roleId);
+    LinkedList<Integer> findMenuIdByRoleId(Integer roleId);
 
     /**
      * 查询菜单项

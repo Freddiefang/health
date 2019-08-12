@@ -3,7 +3,7 @@ package cn.itcast.service;
 import cn.itcast.pojo.Menu;
 import cn.itcast.pojo.User;
 
-import java.util.Set;
+import java.util.LinkedList;
 
 public interface UserService {
     /**
@@ -18,6 +18,6 @@ public interface UserService {
      * @return
      * @param username
      */
-    Set<Menu> getMenuList(String username);
+    LinkedList<Menu> getMenuList(String username);
 
 }

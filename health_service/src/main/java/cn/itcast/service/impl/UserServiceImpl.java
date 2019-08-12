@@ -53,8 +53,8 @@ public class UserServiceImpl implements UserService {
      * @param username
      */
     @Override
-    public Set<Menu> getMenuList(String username) {
-        LinkedHashSet<Menu> menus = new LinkedHashSet<>();
+    public LinkedList<Menu> getMenuList(String username) {
+        LinkedList<Menu> menus = new LinkedList<>();
         //通过用户名和用户密码查询用户ID
         User user = userDao.findUserByUsername(username);
         //通过用户ID查询角色ID
@@ -64,10 +64,10 @@ public class UserServiceImpl implements UserService {
             for (Role role : roleSet) {
                 Integer roleId = role.getId();
                 //通过角色ID查询，角色所具有的菜单选项
-                List<Integer> menuIdList = menuDao.findMenuIdByRoleId(roleId);
+                LinkedList<Integer> menuIdList = menuDao.findMenuIdByRoleId(roleId);
                 Menu menu = null;
-                List<Integer> parentIds = new ArrayList<>();
-                List<Integer> childIds = new ArrayList<>();
+                List<Integer> parentIds = new LinkedList<>();
+                List<Integer> childIds = new LinkedList<>();
                 if (menuIdList != null && menuIdList.size() > 0){
                     for (Integer menuId : menuIdList) {
                         //查询菜单项
@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService {
                 }
                 for (Integer parentId : parentIds) {
                     Menu parentMenu = menuDao.findMenuByMenuId(parentId);
-                    List<Menu> childMenuList = new ArrayList<>();
+                    List<Menu> childMenuList = new LinkedList<>();
                     for (Integer childId : childIds) {
                         //查询孩子的父菜单
                         Menu childMenu = menuDao.findMenuByMenuId(childId);
