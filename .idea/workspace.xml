@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="694548d9-566d-4d52-81e1-2e9877fddb5a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/health_service/mylog.log" afterPath="$PROJECT_DIR$/health_service/mylog.log" />
-      <change beforePath="$PROJECT_DIR$/health_web/mylog.log" afterPath="$PROJECT_DIR$/health_web/mylog.log" />
-    </list>
+    <list default="true" id="694548d9-566d-4d52-81e1-2e9877fddb5a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/health_dao/target/" />
     <ignored path="$PROJECT_DIR$/health_common/target/" />
     <ignored path="$PROJECT_DIR$/health_interface/target/" />
@@ -538,7 +535,7 @@
       <workItem from="1565580597216" duration="866000" />
       <workItem from="1565584454005" duration="97000" />
       <workItem from="1565584955078" duration="1844000" />
-      <workItem from="1565596254273" duration="4201000" />
+      <workItem from="1565596254273" duration="4795000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交">
       <created>1565511919617</created>
@@ -579,7 +576,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31152000" />
+    <option name="totallyTimeSpent" value="31746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
